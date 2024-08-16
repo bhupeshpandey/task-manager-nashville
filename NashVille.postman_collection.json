@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "08bf61c6-a9db-4fd9-9274-d8a4a23666ac",
+		"name": "NashVille",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27717829",
+		"_collection_link": "https://www.postman.com/cloudy-firefly-713828/workspace/assignment-service/collection/27717829-08bf61c6-a9db-4fd9-9274-d8a4a23666ac?action=share&source=collection_link&creator=27717829"
+	},
+	"item": [
+		{
+			"name": "GetHealthz",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GetHealthz",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:50059/service/v1/healthz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50059",
+							"path": [
+								"service",
+								"v1",
+								"healthz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Aug 2024 13:44:55 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"serviceName\": \"nashville-task-service\",\n    \"version\": \"v1\",\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test title\",\n    \"description\": \"descriptive text\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/service/v1/task",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"service",
+						"v1",
+						"task"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateTask",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Test title\",\n    \"description\": \"descriptive text\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/task",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"task"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 22:56:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"d5d750f3-69e3-48b8-941c-8361fc9e8efc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/service/v1/task/d5d750f3-69e3-48b8-941c-8361fc9e8efc",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"service",
+						"v1",
+						"task",
+						"d5d750f3-69e3-48b8-941c-8361fc9e8efc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteTask",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/task/d5d750f3-69e3-48b8-941c-8361fc9e8efc",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"task",
+								"d5d750f3-69e3-48b8-941c-8361fc9e8efc"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 23:10:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "GetTask",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/service/v1/task/d5d750f3-69e3-48b8-941c-8361fc9e8efc",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"service",
+						"v1",
+						"task",
+						"d5d750f3-69e3-48b8-941c-8361fc9e8efc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetTask",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/task/d5d750f3-69e3-48b8-941c-8361fc9e8efc",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"task",
+								"d5d750f3-69e3-48b8-941c-8361fc9e8efc"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 23:10:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"d5d750f3-69e3-48b8-941c-8361fc9e8efc\",\n    \"title\": \"Test title\",\n    \"description\": \"descriptive text\",\n    \"created_at\": {\n        \"seconds\": 1723762587,\n        \"nanos\": 52563000\n    },\n    \"updated_at\": {\n        \"seconds\": 1723762587,\n        \"nanos\": 52563000\n    }\n}"
+				},
+				{
+					"name": "InvalidId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/task/d5d750f3-69e3-48b8-941c-8361fc9e8ef",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"task",
+								"d5d750f3-69e3-48b8-941c-8361fc9e8ef"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 23:15:53 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						}
+					],
+					"cookie": [],
+					"body": "sql: no rows in result set\n"
+				}
+			]
+		},
+		{
+			"name": "ListTasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/service/v1/tasks",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"service",
+						"v1",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"description": "he page number or offset for pages",
+							"disabled": true
+						},
+						{
+							"key": "pageSize",
+							"value": "1",
+							"description": "number of objects in the list",
+							"disabled": true
+						},
+						{
+							"key": "startTime",
+							"value": "2024-08-15T00:00:00+05:30",
+							"description": "From date in ISO 8601 format",
+							"disabled": true
+						},
+						{
+							"key": "endTime",
+							"value": "2024-08-16T09:31:42+05:30",
+							"description": "To date in ISO-8601 format",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ListTasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/tasks",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 22:56:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "887"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": [\n        {\n            \"id\": \"b11fb24a-b8e7-4bfb-ab61-aa3d40698420\",\n            \"title\": \"Test title\",\n            \"description\": \"descriptive text\",\n            \"created_at\": {\n                \"seconds\": 1723761501,\n                \"nanos\": 951001000\n            },\n            \"updated_at\": {\n                \"seconds\": 1723761501,\n                \"nanos\": 951001000\n            }\n        },\n        {\n            \"id\": \"980cf160-e94b-4cc0-b888-c73358620118\",\n            \"title\": \"Test title\",\n            \"description\": \"descriptive text\",\n            \"created_at\": {\n                \"seconds\": 1723761353,\n                \"nanos\": 655646000\n            },\n            \"updated_at\": {\n                \"seconds\": 1723761353,\n                \"nanos\": 655646000\n            }\n        },\n        {\n            \"id\": \"0bb945c3-a358-49a4-9b2c-123408c1788e\",\n            \"title\": \"Test task creation\",\n            \"description\": \"Test task creation description\",\n            \"created_at\": {\n                \"seconds\": 1723760489,\n                \"nanos\": 59046000\n            },\n            \"updated_at\": {\n                \"seconds\": 1723760489,\n                \"nanos\": 59046000\n            }\n        },\n        {\n            \"id\": \"c6a064c8-0f50-4d2e-95f8-9f36b49f81cc\",\n            \"title\": \"Test task creation\",\n            \"description\": \"Test task creation description\",\n            \"created_at\": {\n                \"seconds\": 1723760084,\n                \"nanos\": 974429000\n            },\n            \"updated_at\": {\n                \"seconds\": 1723760084,\n                \"nanos\": 974430000\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateTask",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"new description\",\n    \"title\": \"new title\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/service/v1/task/b11fb24a-b8e7-4bfb-ab61-aa3d40698420",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"service",
+						"v1",
+						"task",
+						"b11fb24a-b8e7-4bfb-ab61-aa3d40698420"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateTask",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"new description\",\n    \"title\": \"new title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/task/b11fb24a-b8e7-4bfb-ab61-aa3d40698420",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"task",
+								"b11fb24a-b8e7-4bfb-ab61-aa3d40698420"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 23:14:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				},
+				{
+					"name": "InvalidId",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"new description\",\n    \"title\": \"new title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/service/v1/task/b11fb24a-b8e7-4bfb-ab61-aa3d4069842",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"service",
+								"v1",
+								"task",
+								"b11fb24a-b8e7-4bfb-ab61-aa3d4069842"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Aug 2024 23:15:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						}
+					],
+					"cookie": [],
+					"body": "sql: no rows in result set\n"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "50059",
+			"type": "string"
+		}
+	]
+}
