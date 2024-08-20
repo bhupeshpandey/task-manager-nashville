@@ -40,7 +40,8 @@ func AddServiceRoutes(wsRouter *gin.RouterGroup, method string, path string, han
 	wsRouter.Handle(method, path, handler)
 }
 
-func Start(server *http.Server) {
+func Start(server *http.Server, httpServer *models.HttpServer) {
+	httpServer.Logger.Log(models.InfoLevel, "Starting the HTTP Server", fmt.Sprintf("Host: %s, Port: %s", httpServer.Host, httpServer.Port))
 	err := server.ListenAndServe()
 	if err != nil {
 		return

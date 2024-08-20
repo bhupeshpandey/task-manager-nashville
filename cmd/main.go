@@ -37,5 +37,5 @@ func main() {
 	conf.HttpServer.Logger = newLogger
 	httpServer := server.NewHTTPServer(grpcClient, conf.HttpServer)
 
-	server.Start(httpServer)
+	server.Start(httpServer, conf.HttpServer)
 }
