@@ -1,3 +1,7 @@
 grpcServer:
   host: localhost
   port: 50051
+
+prometheus:
+  host: localhost
+  port: 8082
