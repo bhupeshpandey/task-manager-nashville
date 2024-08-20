@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"github.com/bhupeshpandey/task-manager-nashville/internal/models"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"
@@ -12,11 +13,13 @@ import (
 	//"path/to/internal/handler"
 )
 
-func NewHTTPServer(grpcClient proto.TaskServiceClient) *http.Server {
-	taskHandler := handlers.NewTaskHandler(grpcClient)
+func NewHTTPServer(grpcClient proto.TaskServiceClient, serverConfig *models.HttpServer) *http.Server {
+	taskHandler := handlers.NewTaskHandler(grpcClient, serverConfig.Logger)
 
 	// create the new Gin engine and setup middleware handler chain
 	ge := gin.New()
+
+	gin.SetMode(gin.TestMode)
 
 	ge.UseRawPath = true
 
@@ -25,7 +28,7 @@ func NewHTTPServer(grpcClient proto.TaskServiceClient) *http.Server {
 	// route GET /healthz status getHealthz
 	taskHandler.AddServiceRoutes(wsRouter, AddServiceRoutes)
 	server := &http.Server{
-		Addr:         fmt.Sprintf(":%s", "50059"),
+		Addr:         fmt.Sprintf("%s:%s", serverConfig.Host, serverConfig.Port),
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 		Handler:      ge,

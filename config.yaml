@@ -5,3 +5,12 @@ grpcServer:
 prometheus:
   host: localhost
   port: 8082
+
+logging:
+  type: "zap"
+  environment: "dev"
+  logLevel: "info"
+
+httpServer:
+  host: localhost
+  port: 50059
